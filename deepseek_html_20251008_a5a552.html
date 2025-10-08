@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家庭关系表</title>
+    <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            line-height: 1.6;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .table-row {
+            transition: all 0.2s ease;
+        }
+        
+        .table-row:hover {
+            background-color: rgba(245, 245, 247, 0.6);
+            transform: translateY(-1px);
+        }
+        
+        .back-to-top {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 640px) {
+            .glass-card {
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-xl font-semibold text-gray-900">家庭关系表</div>
+            <button id="backToTop" class="back-to-top bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-full flex items-center">
+                <i class="fas fa-arrow-up mr-2"></i>返回顶部
+            </button>
+        </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="container mx-auto px-6 py-8">
+        <div class="glass-card p-8 mb-8">
+            <h1 class="text-3xl font-bold text-center text-gray-900 mb-8">家庭关系表</h1>
+            
+            <!-- 表格区域 -->
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-gray-200">
+                            <th class="py-4 px-6 text-left font-medium text-gray-500 uppercase tracking-wider">序号</th>
+                            <th class="py-4 px-6 text-left font-medium text-gray-500 uppercase tracking-wider">男性称呼</th>
+                            <th class="py-4 px-6 text-left font-medium text-gray-500 uppercase tracking-wider">女性称呼</th>
+                            <th class="py-4 px-6 text-left font-medium text-gray-500 uppercase tracking-wider">定义</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="table-row">
+                            <td class="py-4 px-6">a</td>
+                            <td class="py-4 px-6">grandson</td>
+                            <td class="py-4 px-6">granddaughter</td>
+                            <td class="py-4 px-6">子女的孩子</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="py-4 px-6">b</td>
+                            <td class="py-4 px-6">nephew</td>
+                            <td class="py-4 px-6">niece</td>
+                            <td class="py-4 px-6">兄弟姐妹的孩子</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="py-4 px-6">c</td>
+                            <td class="py-4 px-6">grandfather</td>
+                            <td class="py-4 px-6">grandmother</td>
+                            <td class="py-4 px-6">父母的父母</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="py-4 px-6">d</td>
+                            <td class="py-4 px-6">great-grandfather</td>
+                            <td class="py-4 px-6">great-grandmother</td>
+                            <td class="py-4 px-6">祖父母的父母</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="py-4 px-6">e</td>
+                            <td class="py-4 px-6">uncle</td>
+                            <td class="py-4 px-6">aunt</td>
+                            <td class="py-4 px-6">父母的兄弟姐妹</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="py-4 px-6">f</td>
+                            <td class="py-4 px-6">cousin</td>
+                            <td class="py-4 px-6">cousin</td>
+                            <td class="py-4 px-6">姑姨叔舅的孩子</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="py-4 px-6">g</td>
+                            <td class="py-4 px-6">brother-in-law</td>
+                            <td class="py-4 px-6">sister-in-law</td>
+                            <td class="py-4 px-6">配偶的兄弟姐妹</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="py-4 px-6">h</td>
+                            <td class="py-4 px-6">father-in-law</td>
+                            <td class="py-4 px-6">mother-in-law</td>
+                            <td class="py-4 px-6">配偶的父母</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="py-4 px-6">i</td>
+                            <td class="py-4 px-6">stepfather</td>
+                            <td class="py-4 px-6">stepmother</td>
+                            <td class="py-4 px-6">父母的再婚配偶</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="py-4 px-6">j</td>
+                            <td class="py-4 px-6">half-brother</td>
+                            <td class="py-4 px-6">half-sister</td>
+                            <td class="py-4 px-6">父母再婚所生子女</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="py-4 px-6">k</td>
+                            <td class="py-4 px-6">ex-husband</td>
+                            <td class="py-4 px-6">ex-wife</td>
+                            <td class="py-4 px-6">离婚的配偶</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="py-4 px-6">l</td>
+                            <td class="py-4 px-6">partner</td>
+                            <td class="py-4 px-6">partner</td>
+                            <td class="py-4 px-6">同居伴侣</td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="py-4 px-6">m</td>
+                            <td class="py-4 px-6">twin</td>
+                            <td class="py-4 px-6">twin</td>
+                            <td class="py-4 px-6">双胞胎兄弟姐妹</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 备注区域 -->
+            <div class="mt-12 p-6 bg-gray-50 rounded-xl">
+                <p class="text-gray-700 mb-4">
+                    <span class="font-medium">注：</span>家庭关系树状图可视化请参考下图
+                </p>
+                <div class="mt-4 flex justify-center">
+                    <img src="https://static.shutu.cn/shutu/jpeg/open5d/2025/10/08/b1fbb0f270879b1544d8760a6a19e6f7.jpeg" 
+                         alt="家庭关系树状图" 
+                         class="max-w-full h-auto rounded-lg shadow-sm border border-gray-200"
+                         style="max-height: 500px;">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-100 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-600">
+            <p>Created by <span class="font-medium">PERRY</span> with <a href="https://space.coze.cn" class="text-gray-700 hover:text-gray-900 transition-colors">COZE Space</a></p>
+            <p class="mt-2">页面内容均由 AI 生成，仅供参考</p>
+        </div>
+    </footer>
+
+    <script>
+        // 返回顶部功能
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 滚动时显示/隐藏返回顶部按钮
+        window.addEventListener('scroll', function() {
+            const backToTopBtn = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+            }
+        });
+    </script>
+</body>
+</html>
